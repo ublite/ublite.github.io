@@ -4,7 +4,6 @@
     <title>emqx安装</title>
     <url>/2019/12/02/emqx%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<p>1、Install the required dependencies</p>
-<p>``bash</p>
 ]]></content>
       <tags>
         <tag>mqtt</tag>
