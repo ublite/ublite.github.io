@@ -53,7 +53,7 @@
 <meta property="og:site_name" content="Y.">
 <meta property="og:description" content="1. Install the required dependencies1$ sudo yum install -y yum-utils device-mapper-persistent-data lvm2 2. Set up a stable repository, taking the CentOS7 as an example.1$ sudo yum-config-manager --add">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-02T13:43:14.994Z">
+<meta property="og:updated_time" content="2019-12-02T13:49:48.782Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/12/02/emqx%E5%AE%89%E8%A3%85/">
@@ -249,7 +249,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-02 20:40:20 / 修改时间：21:43:14" itemprop="dateCreated datePublished" datetime="2019-12-02T20:40:20+08:00">2019-12-02</time>
+              <time title="创建时间：2019-12-02 20:40:20 / 修改时间：21:49:48" itemprop="dateCreated datePublished" datetime="2019-12-02T20:40:20+08:00">2019-12-02</time>
             </span>
 
           
@@ -275,11 +275,14 @@
 <h2 id="3-Install-the-latest-version-of-EMQ-X"><a href="#3-Install-the-latest-version-of-EMQ-X" class="headerlink" title="3. Install the latest version of EMQ X"></a>3. Install the latest version of EMQ X</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install emqx</span><br></pre></td></tr></table></figure>
 <h2 id="4-Install-a-specific-version-of-EMQ-X"><a href="#4-Install-a-specific-version-of-EMQ-X" class="headerlink" title="4. Install a specific version of EMQ X"></a>4. Install a specific version of EMQ X</h2><h4 id="1-Query-available-version"><a href="#1-Query-available-version" class="headerlink" title="1. Query available version"></a>1. Query available version</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum list emqx --showduplicates | sort -remqx.x86_64 3.1.0-1.el7 emqx-stableemqx.x86_64 3.0.1-1.el7 emqx-stableemqx.x86_64 3.0.0-1.el7 emqx-stable</span><br></pre></td></tr></table></figure>
 <h4 id="2-Install-a-specific-version-based-on-the-version-string-in-the-second-column-such-as-3-1-0"><a href="#2-Install-a-specific-version-based-on-the-version-string-in-the-second-column-such-as-3-1-0" class="headerlink" title="2. Install a specific version based on the version string in the second column, such as 3.1.0"></a>2. Install a specific version based on the version string in the second column, such as 3.1.0</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install emqx-3.1.0</span><br></pre></td></tr></table></figure>
-<h2 id="5-Start-EMQ-X"><a href="#5-Start-EMQ-X" class="headerlink" title="5. Start EMQ X"></a>5. Start EMQ X</h2><h4 id="Directly-start-emqx-startemqx-3-1-0-is-started-successfully"><a href="#Directly-start-emqx-startemqx-3-1-0-is-started-successfully" class="headerlink" title="* Directly start$ emqx startemqx 3.1.0 is started successfully!"></a>* Directly start$ emqx startemqx 3.1.0 is started successfully!</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ emqx_ctl statusNode &apos;emqx@127.0.0.1&apos; is startedemqx v3.1.0 is running</span><br></pre></td></tr></table></figure>
+<h2 id="5-Start-EMQ-X"><a href="#5-Start-EMQ-X" class="headerlink" title="5. Start EMQ X"></a>5. Start EMQ X</h2><h4 id="Directly-start"><a href="#Directly-start" class="headerlink" title="* Directly start"></a>* Directly start</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ emqx start</span><br></pre></td></tr></table></figure>
+<p><em>emqx 3.1.0 is started successfully!</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ emqx_ctl status</span><br></pre></td></tr></table></figure>
+<p><em>Node ‘emqx@127.0.0.1’ is startedemqx v3.1.0 is running</em></p>
 <h4 id="systemctl-start"><a href="#systemctl-start" class="headerlink" title="* systemctl start"></a>* systemctl start</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl start emqx</span><br></pre></td></tr></table></figure>
-<h4 id="service-start"><a href="#service-start" class="headerlink" title="* service start"></a>* service start</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo su</span><br></pre></td></tr></table></figure>
-<h2 id="6-访问应用"><a href="#6-访问应用" class="headerlink" title="6. 访问应用"></a>6. 访问应用</h2><pre><code>地址：http://IP:18083
-用户名/密码：admin/public</code></pre>
+<h4 id="service-start"><a href="#service-start" class="headerlink" title="* service start"></a>* service start</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo service emqx start</span><br></pre></td></tr></table></figure>
+<h2 id="6-访问应用"><a href="#6-访问应用" class="headerlink" title="6. 访问应用"></a>6. 访问应用</h2><p>地址：<a href="http://IP:18083" target="_blank" rel="noopener">http://IP:18083</a><br>用户名/密码：admin/public</p>
+
     </div>
 
     
@@ -295,6 +298,13 @@
 
 
         
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/02/%E6%BC%AB%E5%A8%81%E5%AE%87%E5%AE%99%E8%A7%82%E5%BD%B1%E9%A1%BA%E5%BA%8F/" rel="next" title="漫威宇宙四个阶段观影顺序">
+      漫威宇宙四个阶段观影顺序 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -331,7 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Install-the-required-dependencies"><span class="nav-number">1.</span> <span class="nav-text">1. Install the required dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Set-up-a-stable-repository-taking-the-CentOS7-as-an-example"><span class="nav-number">2.</span> <span class="nav-text">2. Set up a stable repository, taking the CentOS7 as an example.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Install-the-latest-version-of-EMQ-X"><span class="nav-number">3.</span> <span class="nav-text">3. Install the latest version of EMQ X</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Install-a-specific-version-of-EMQ-X"><span class="nav-number">4.</span> <span class="nav-text">4. Install a specific version of EMQ X</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Query-available-version"><span class="nav-number">4.0.1.</span> <span class="nav-text">1. Query available version</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Install-a-specific-version-based-on-the-version-string-in-the-second-column-such-as-3-1-0"><span class="nav-number">4.0.2.</span> <span class="nav-text">2. Install a specific version based on the version string in the second column, such as 3.1.0</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Start-EMQ-X"><span class="nav-number">5.</span> <span class="nav-text">5. Start EMQ X</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Directly-start-emqx-startemqx-3-1-0-is-started-successfully"><span class="nav-number">5.0.1.</span> <span class="nav-text">* Directly start$ emqx startemqx 3.1.0 is started successfully!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#systemctl-start"><span class="nav-number">5.0.2.</span> <span class="nav-text">* systemctl start</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#service-start"><span class="nav-number">5.0.3.</span> <span class="nav-text">* service start</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-访问应用"><span class="nav-number">6.</span> <span class="nav-text">6. 访问应用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Install-the-required-dependencies"><span class="nav-number">1.</span> <span class="nav-text">1. Install the required dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Set-up-a-stable-repository-taking-the-CentOS7-as-an-example"><span class="nav-number">2.</span> <span class="nav-text">2. Set up a stable repository, taking the CentOS7 as an example.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Install-the-latest-version-of-EMQ-X"><span class="nav-number">3.</span> <span class="nav-text">3. Install the latest version of EMQ X</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Install-a-specific-version-of-EMQ-X"><span class="nav-number">4.</span> <span class="nav-text">4. Install a specific version of EMQ X</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Query-available-version"><span class="nav-number">4.0.1.</span> <span class="nav-text">1. Query available version</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Install-a-specific-version-based-on-the-version-string-in-the-second-column-such-as-3-1-0"><span class="nav-number">4.0.2.</span> <span class="nav-text">2. Install a specific version based on the version string in the second column, such as 3.1.0</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Start-EMQ-X"><span class="nav-number">5.</span> <span class="nav-text">5. Start EMQ X</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Directly-start"><span class="nav-number">5.0.1.</span> <span class="nav-text">* Directly start</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#systemctl-start"><span class="nav-number">5.0.2.</span> <span class="nav-text">* systemctl start</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#service-start"><span class="nav-number">5.0.3.</span> <span class="nav-text">* service start</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-访问应用"><span class="nav-number">6.</span> <span class="nav-text">6. 访问应用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -347,12 +357,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
