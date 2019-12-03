@@ -1,0 +1,8 @@
+User-agent: * Allow: /
+Allow: /archives/
+Disallow: /vendors/
+Disallow: /categories/
+
+
+Sitemap: http://blog.chenliyang.net/sitemap.xml
+Sitemap: http://blog.chenliyang.net/baidusitemap.xml
