@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.chenliyang.net/%E6%BC%AB%E5%A8%81%E5%AE%87%E5%AE%99%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5%E8%A7%82%E5%BD%B1%E9%A1%BA%E5%BA%8F/</loc>
+    
+    <lastmod>2019-12-03T07:10:28.620Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.chenliyang.net/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADchar%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    
+    <lastmod>2019-12-03T07:10:07.031Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.chenliyang.net/categories/index.html</loc>
     
     <lastmod>2019-12-03T02:28:20.909Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://blog.chenliyang.net/tags/index.html</loc>
     
     <lastmod>2019-12-03T02:27:58.123Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.chenliyang.net/%E6%BC%AB%E5%A8%81%E5%AE%87%E5%AE%99%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5%E8%A7%82%E5%BD%B1%E9%A1%BA%E5%BA%8F/</loc>
-    
-    <lastmod>2019-12-03T02:24:24.811Z</lastmod>
     
   </url>
   
