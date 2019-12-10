@@ -45,15 +45,15 @@
   };
 </script>
 
-  <meta name="description" content="安装nfs和rpcbind 12# yum install nft-utils# yum install rpcbind  启动nfs和rpcbind 12# systemctl start nfs# systemctl start rpcbind  开放端口并重启防火墙 1234# firewall-cmd --zone=public --add-port=111&#x2F;tcp --permanen">
+  <meta name="description" content="安装nfs和rpcbind 12# yum install nft-utils# yum install rpcbind  启动nfs和rpcbind 12# systemctl start nfs# systemctl start rpcbind">
 <meta name="keywords" content="linux,CentOS共享目录,NFS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7共享目录-NFS共享目录">
 <meta property="og:url" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;CentOS7%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95-NFS%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95&#x2F;index.html">
 <meta property="og:site_name" content="Y&#39;s Blog">
-<meta property="og:description" content="安装nfs和rpcbind 12# yum install nft-utils# yum install rpcbind  启动nfs和rpcbind 12# systemctl start nfs# systemctl start rpcbind  开放端口并重启防火墙 1234# firewall-cmd --zone=public --add-port=111&#x2F;tcp --permanen">
+<meta property="og:description" content="安装nfs和rpcbind 12# yum install nft-utils# yum install rpcbind  启动nfs和rpcbind 12# systemctl start nfs# systemctl start rpcbind">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-10T03:07:20.111Z">
+<meta property="og:updated_time" content="2019-12-10T03:32:22.094Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://blog.chenliyang.net/CentOS7%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95-NFS%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/">
@@ -238,7 +238,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-10 11:05:16 / 修改时间：11:07:20" itemprop="dateCreated datePublished" datetime="2019-12-10T11:05:16+08:00">2019-12-10</time>
+              <time title="创建时间：2019-12-10 11:05:16 / 修改时间：11:32:22" itemprop="dateCreated datePublished" datetime="2019-12-10T11:05:16+08:00">2019-12-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,6 +276,8 @@
 </li>
 <li><p>启动nfs和rpcbind</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl start nfs</span></span><br><span class="line"><span class="comment"># systemctl start rpcbind</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 </li>
 <li><p>开放端口并重启防火墙</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=public --add-port=111/tcp --permanent</span></span><br><span class="line"><span class="comment"># firewall-cmd --zone=public --add-port=2049/tcp --permanent</span></span><br><span class="line"><span class="comment"># firewall-cmd --reload</span></span><br><span class="line"><span class="comment"># firewall-cmd --list-ports</span></span><br></pre></td></tr></table></figure>
@@ -306,7 +308,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mount -t nfs 10.0.0.1:/opt/nfs /opt/nfs</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看挂载的网络磁盘</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># df -h</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># df -h</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 
     </div>

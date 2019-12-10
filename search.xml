@@ -9,6 +9,8 @@
 </li>
 <li><p>启动nfs和rpcbind</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># systemctl start nfs</span></span><br><span class="line"><span class="comment"># systemctl start rpcbind</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 </li>
 <li><p>开放端口并重启防火墙</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=public --add-port=111/tcp --permanent</span></span><br><span class="line"><span class="comment"># firewall-cmd --zone=public --add-port=2049/tcp --permanent</span></span><br><span class="line"><span class="comment"># firewall-cmd --reload</span></span><br><span class="line"><span class="comment"># firewall-cmd --list-ports</span></span><br></pre></td></tr></table></figure>
@@ -39,7 +41,9 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mount -t nfs 10.0.0.1:/opt/nfs /opt/nfs</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看挂载的网络磁盘</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># df -h</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># df -h</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -55,10 +59,15 @@
     <title>数据库中char和varchar的区别</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADchar%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<ul>
-<li>char的长度是不可变的，而varchar的长度是可变的，</li>
-<li>定义一个char[10]和varchar[10],如果存进去的是‘abcd’,那么char所占的长度依然为10，除了字符‘abcd’外，后面跟六个空格，而varchar就立马把长度变为4了，取数据的时候，char类型的要用trim()去掉多余的空格，而varchar是不需要的，</li>
-<li>char的存取数度还是要比varchar要快得多，因为其长度固定，方便程序的存储与查找；但是char也为此付出的是空间的代价，因为其长度固定，所以难免会有多余的空格占位符占据空间，可谓是以空间换取时间效率，而varchar是以空间效率为首位的。</li>
-<li>char的存储方式是，对英文字符（ASCII）占用1个字节，对一个汉字占用两个字节；而varchar的存储方式是，对每个英文字符占用2个字节，汉字也占用2个字节，两者的存储数据都非unicode的字符数据。</li>
+<li><p>char的长度是不可变的，而varchar的长度是可变的。</p>
+</li>
+<li><p>定义一个char[10]和varchar[10],如果存进去的是‘abcd’,那么char所占的长度依然为10，除了字符‘abcd’外，后面跟六个空格，而varchar就立马把长度变为4了，取数据的时候，char类型的要用trim()去掉多余的空格，而varchar是不需要的。</p>
+<a id="more"></a>
+</li>
+<li><p>char的存取数度还是要比varchar要快得多，因为其长度固定，方便程序的存储与查找；但是char也为此付出的是空间的代价，因为其长度固定，所以难免会有多余的空格占位符占据空间，可谓是以空间换取时间效率，而varchar是以空间效率为首位的。</p>
+</li>
+<li><p>char的存储方式是，对英文字符（ASCII）占用1个字节，对一个汉字占用两个字节；而varchar的存储方式是，对每个英文字符占用2个字节，汉字也占用2个字节，两者的存储数据都非unicode的字符数据。</p>
+</li>
 </ul>
 ]]></content>
       <categories>
