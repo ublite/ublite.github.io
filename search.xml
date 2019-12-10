@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CentOS7共享目录-NFS共享目录</title>
+    <url>/CentOS7%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95-NFS%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<ul>
+<li><p>安装nfs和rpcbind</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># yum install nft-utils</span></span><br><span class="line"><span class="comment"># yum install rpcbind</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动nfs和rpcbind</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># systemctl start nfs</span></span><br><span class="line"><span class="comment"># systemctl start rpcbind</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开放端口并重启防火墙</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --zone=public --add-port=111/tcp --permanent</span></span><br><span class="line"><span class="comment"># firewall-cmd --zone=public --add-port=2049/tcp --permanent</span></span><br><span class="line"><span class="comment"># firewall-cmd --reload</span></span><br><span class="line"><span class="comment"># firewall-cmd --list-ports</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建需要共享的文件夹</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mkdir /opt/nfs</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑/etc/exports 文件，添加如下内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># vim /etc/exports</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/opt/nfs 10.0.0.2(rw,no_root_squash,sync,no_wdelay)<br>/opt/nfs 10.0.0.3(rw,no_root_squash,sync,no_wdelay)</p>
+</blockquote>
+</li>
+<li><p>使exports文件生效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># sudo exportfs -rv</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启nfs和rpcbind</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># systemctl restart nfs</span></span><br><span class="line"><span class="comment"># systemctl restart rpcbind</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="客户端-（10-0-0-2和10-0-0-3）"><a href="#客户端-（10-0-0-2和10-0-0-3）" class="headerlink" title="客户端 （10.0.0.2和10.0.0.3）"></a>客户端 （10.0.0.2和10.0.0.3）</h4><ul>
+<li><p>创建需要挂载的文件夹</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mkdir /opt/nfs</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>挂载网络磁盘</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mount -t nfs 10.0.0.1:/opt/nfs /opt/nfs</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看挂载的网络磁盘</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># df -h</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>CentOS共享目录</tag>
+        <tag>NFS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据库中char和varchar的区别</title>
     <url>/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADchar%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[]]></content>
