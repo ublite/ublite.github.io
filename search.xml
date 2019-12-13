@@ -10,6 +10,7 @@
 <p>perl-JSON-2.90-1.of.el7.noarch.rpm</p>
 <p>perl-Data-Dumper-2.145-3.el7.x86_64.rpm</p>
 </blockquote>
+<a id="more"></a>
 </li>
 <li><p>解压MySQL安装包</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># tar -xvf mysql-5.7.28-1.el7.x86_64.rpm-bundle.tar</span></span><br></pre></td></tr></table></figure>

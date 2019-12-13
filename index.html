@@ -237,7 +237,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-13 16:14:14 / 修改时间：17:33:45" itemprop="dateCreated datePublished" datetime="2019-12-13T16:14:14+08:00">2019-12-13</time>
+              <time title="创建时间：2019-12-13 16:14:14 / 修改时间：17:36:52" itemprop="dateCreated datePublished" datetime="2019-12-13T16:14:14+08:00">2019-12-13</time>
             </span>
 
           
@@ -265,84 +265,14 @@
 <p>perl-JSON-2.90-1.of.el7.noarch.rpm</p>
 <p>perl-Data-Dumper-2.145-3.el7.x86_64.rpm</p>
 </blockquote>
-</li>
-<li><p>解压MySQL安装包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -xvf mysql-5.7.28-1.el7.x86_64.rpm-bundle.tar</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>mysql-community-client-5.7.28-1.el7.x86_64.rpm<br>mysql-community-common-5.7.28-1.el7.x86_64.rpm<br>mysql-community-devel-5.7.28-1.el7.x86_64.rpm<br>mysql-community-embedded-5.7.28-1.el7.x86_64.rpm<br>mysql-community-embedded-compat-5.7.28-1.el7.x86_64.rpm<br>mysql-community-embedded-devel-5.7.28-1.el7.x86_64.rpm<br>mysql-community-libs-5.7.28-1.el7.x86_64.rpm<br>mysql-community-libs-compat-5.7.28-1.el7.x86_64.rpm<br>mysql-community-server-5.7.28-1.el7.x86_64.rpm<br>mysql-community-test-5.7.28-1.el7.x86_64.rpm</p>
-</blockquote>
-</li>
-<li><p>安装mysql</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rpm -ivh mysql-community-*.rpm</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>报错了</p>
-<blockquote>
-<p>错误：依赖检测失败：</p>
-<pre><code>mariadb-libs 被 mysql-community-libs-5.7.28-1.el7.x86_64 取代
-mariadb-libs 被 mysql-community-libs-compat-5.7.28-1.el7.x86_64 取代
-perl(JSON) 被 mysql-community-test-5.7.28-1.el7.x86_64 需要</code></pre></blockquote>
-</li>
-<li><p>卸载mariadb，安装perl</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rpm -e mariadb-libs --nodeps</span></span><br><span class="line"><span class="comment"># rpm -ivh perl-Data-Dumper-2.145-3.el7.x86_64.rpm </span></span><br><span class="line"><span class="comment"># rpm -ivh perl-Test-Simple-1.302164-1.el7.noarch.rpm </span></span><br><span class="line"><span class="comment"># rpm -ivh perl-JSON-2.90-1.of.el7.noarch.rpm</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>继续安装MySQL</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rpm -ivh mysql-community-*.rpm</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>准备中…                          ################################# [100%]<br>正在升级/安装…<br>   1:mysql-community-common-5.7.28-1.e################################# [ 10%]<br>   2:mysql-community-libs-5.7.28-1.el7################################# [ 20%]<br>   3:mysql-community-client-5.7.28-1.e################################# [ 30%]<br>   4:mysql-community-server-5.7.28-1.e################################# [ 40%]<br>   5:mysql-community-devel-5.7.28-1.el################################# [ 50%]<br>   6:mysql-community-embedded-5.7.28-1################################# [ 60%]<br>   7:mysql-community-embedded-devel-5.################################# [ 70%]<br>   8:mysql-community-test-5.7.28-1.el7################################# [ 80%]<br>   9:mysql-community-libs-compat-5.7.2################################# [ 90%]<br>  10:mysql-community-embedded-compat-5################################# [100%]</p>
-</blockquote>
-</li>
-<li><p>创建mysql数据文件夹</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd /data</span></span><br><span class="line"><span class="comment"># mkdir mysql</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>授予mysql用户和组</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chown -R mysql:mysql mysql</span></span><br><span class="line"><span class="comment"># chmod 755 mysql</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更改mysql配置文件，添加或修改如下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/my.cnf</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>#数据目录 为新创建的目录</p>
-<p>datadir=/data/mysql</p>
-<p>#不区分大小写、 utf8编码和其他设置</p>
-<p>character_set_server=utf8<br>sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION<br>lower_case_table_names = 1<br>skip-name-resolve<br>wait_timeout=31536000<br>interactive_timeout=31536000</p>
-</blockquote>
-</li>
-<li><p>启动mysql服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl start mysqld.service</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看mysql密码为：x0zqJrQih#yq</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># grep 'temporary password' /var/log/mysqld.log</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>2019-12-13T09:13:16.939321Z 1 [Note] A temporary password is generated for root@localhost: x0zqJrQih#yq</p>
-</blockquote>
-</li>
-<li><p>登陆mysql并修改密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql -uroot -p</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改密码,并查看mysql编码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER USER USER() IDENTIFIED BY &apos;你的密码&apos;;</span><br><span class="line">mysql&gt; use mysql</span><br><span class="line">mysql&gt; show variables &apos;%char%&apos;;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>+————————————–+—————————-+<br>| Variable_name                        | Value                      |<br>+————————————–+—————————-+<br>| character_set_client                 | utf8                       |<br>| character_set_connection             | utf8                       |<br>| character_set_database               | utf8                       |<br>| character_set_filesystem             | binary                     |<br>| character_set_results                | utf8                       |<br>| character_set_server                 | utf8                       |<br>| character_set_system                 | utf8                       |<br>| character_sets_dir                   | /usr/share/mysql/charsets/ |<br>| validate_password_special_char_count | 1                          |<br>+————————————–+—————————-+</p>
-</blockquote>
-</li>
-<li><p>设置root用户可远程访问</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;你的密码&apos; WITH GRANT OPTION;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>开放mysql端口</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --add-port=3306/tcp --zone=public --permanent</span></span><br><span class="line"><span class="comment"># firewall-cmd --reload </span></span><br><span class="line"><span class="comment"># firewall-cmd --list-ports</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>3306/tcp</p>
-</blockquote>
-</li>
-<li><p>安装完成！！！</p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/CentOS%E5%AE%89%E8%A3%85MySQL5-7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
