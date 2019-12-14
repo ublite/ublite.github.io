@@ -89,6 +89,14 @@ perl(JSON) 被 mysql-community-test-5.7.28-1.el7.x86_64 需要</code></pre></blo
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>数据库安装</tag>
+        <tag>MySql</tag>
+        <tag>CentOS安装MySQL</tag>
+      </tags>
   </entry>
   <entry>
     <title>linux中设置别名</title>
