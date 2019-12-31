@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.chenliyang.net/cc/2020/index.html</loc>
+    
+    <lastmod>2019-12-31T02:55:20.429Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.chenliyang.net/cc/index.html</loc>
+    
+    <lastmod>2019-12-31T02:55:10.977Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.chenliyang.net/CentOS%E5%AE%89%E8%A3%85MySQL5-7/</loc>
     
     <lastmod>2019-12-14T03:15:38.660Z</lastmod>
