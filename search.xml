@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>重学Java基础知识-对象</title>
+    <url>/%E9%87%8D%E5%AD%A6Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>java基础知识</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>java基础</tag>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS安装MySQL5.7</title>
     <url>/CentOS%E5%AE%89%E8%A3%85MySQL5-7/</url>
     <content><![CDATA[<ul>
