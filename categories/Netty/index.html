@@ -45,18 +45,16 @@
   };
 </script>
 
-  <meta name="description" content="char的长度是不可变的，而varchar的长度是可变的。  定义一个char[10]和varchar[10],如果存进去的是‘abcd’,那么char所占的长度依然为10，除了字符‘abcd’外，后面跟六个空格，而varchar就立马把长度变为4了，取数据的时候，char类型的要用trim()去掉多余的空格，而varchar是不需要的。">
-<meta name="keywords" content="数据库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据库中char和varchar的区别">
-<meta property="og:url" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADchar%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB&#x2F;index.html">
+  <meta name="description" content="我能吞下玻璃而不伤身体">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Y&#39;s Blog">
+<meta property="og:url" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;categories&#x2F;Netty&#x2F;index.html">
 <meta property="og:site_name" content="Y&#39;s Blog">
-<meta property="og:description" content="char的长度是不可变的，而varchar的长度是可变的。  定义一个char[10]和varchar[10],如果存进去的是‘abcd’,那么char所占的长度依然为10，除了字符‘abcd’外，后面跟六个空格，而varchar就立马把长度变为4了，取数据的时候，char类型的要用trim()去掉多余的空格，而varchar是不需要的。">
+<meta property="og:description" content="我能吞下玻璃而不伤身体">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-10T03:32:39.050Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://blog.chenliyang.net/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADchar%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/">
+<link rel="canonical" href="http://blog.chenliyang.net/categories/Netty/">
 
 
 <script id="page-configurations">
@@ -64,13 +62,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
+    isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>数据库中char和varchar的区别 | Y's Blog</title>
+  <title>分类: Netty | Y's Blog</title>
   
 
 
@@ -209,105 +207,70 @@
           <div class="content">
             
 
-  <div class="posts-expand">
-      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://blog.chenliyang.net/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%ADchar%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/title.jpg">
-      <meta itemprop="name" content="Y.">
-      <meta itemprop="description" content="我能吞下玻璃而不伤身体">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Y's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          数据库中char和varchar的区别
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">Netty
+          <small>分类</small>
         </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-03 15:05:09" itemprop="dateCreated datePublished" datetime="2019-12-03T15:05:09+08:00">2019-12-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-        <ul>
-<li><p>char的长度是不可变的，而varchar的长度是可变的。</p>
-</li>
-<li><p>定义一个char[10]和varchar[10],如果存进去的是‘abcd’,那么char所占的长度依然为10，除了字符‘abcd’外，后面跟六个空格，而varchar就立马把长度变为4了，取数据的时候，char类型的要用trim()去掉多余的空格，而varchar是不需要的。</p>
-<a id="more"></a>
-</li>
-<li><p>char的存取数度还是要比varchar要快得多，因为其长度固定，方便程序的存储与查找；但是char也为此付出的是空间的代价，因为其长度固定，所以难免会有多余的空格占位符占据空间，可谓是以空间换取时间效率，而varchar是以空间效率为首位的。</p>
-</li>
-<li><p>char的存储方式是，对英文字符（ASCII）占用1个字节，对一个汉字占用两个字节；而varchar的存储方式是，对每个英文字符占用2个字节，汉字也占用2个字节，两者的存储数据都非unicode的字符数据。</p>
-</li>
-</ul>
-
+    <div class="collection-year">
+      <h2 class="collection-header">2020</h2>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-04-16T20:15:26+08:00"
+              content="2020-04-16">
+          04-16
+        </time>
+      </div>
 
-        
+      <h3 class="post-title">
+          <a class="post-title-link" href="/Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8/" itemprop="url">
+            <span itemprop="name">Netty学习-2_第一款Netty应用</span>
+          </a>
+      </h3>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/CentOS7%E4%B8%8B%E5%AE%89%E8%A3%85emqx/" rel="prev" title="CentOS7下安装emqx">
-      <i class="fa fa-chevron-left"></i> CentOS7下安装emqx
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/CentOS7%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95-NFS%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95/" rel="next" title="CentOS7共享目录-NFS共享目录">
-      CentOS7共享目录-NFS共享目录 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-04-15T20:15:26+08:00"
+              content="2020-04-15">
+          04-15
+        </time>
+      </div>
+
+      <h3 class="post-title">
+          <a class="post-title-link" href="/Netty%E5%AD%A6%E4%B9%A0-1_Netty%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6/" itemprop="url">
+            <span itemprop="name">Netty学习-1_Netty核心组件</span>
+          </a>
+      </h3>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
   
   
   
 
-  </div>
+  
+
 
 
           </div>

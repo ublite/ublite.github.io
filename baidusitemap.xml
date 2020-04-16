@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.chenliyang.net/Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8/</loc>
+    <lastmod>2020-04-16</lastmod>
+  </url>  <url>
+    <loc>http://blog.chenliyang.net/Netty%E5%AD%A6%E4%B9%A0-1_Netty%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2020-04-16</lastmod>
+  </url>  <url>
     <loc>http://blog.chenliyang.net/%E9%87%8D%E5%AD%A6Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2020-02-18</lastmod>
   </url>  <url>
