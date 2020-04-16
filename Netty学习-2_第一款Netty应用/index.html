@@ -53,12 +53,12 @@
 <meta property="og:site_name" content="Y&#39;s Blog">
 <meta property="og:description" content="1、配置开发环境   ​        eclipse、Maven 2、编写Echo服务器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-1.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-3.png">
-<meta property="og:updated_time" content="2020-04-16T03:37:49.266Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-3.png">
+<meta property="og:updated_time" content="2020-04-16T03:47:35.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8&#x2F;2-1.png">
 
 <link rel="canonical" href="http://blog.chenliyang.net/Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8/">
 
@@ -272,7 +272,7 @@
 <a id="more"></a>
 
 <p>​        下图展示了Echo客户端和服务器：</p>
-<p><img src="Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8/2-1.png" alt=""></p>
+<p><img src="2-1.png" alt=""></p>
 <p>​        Echo客户端和服务端之前的交互是非常简单的；在客户端建立一个连接之后，它会向服务器发送一个或多个消息，反过来，服务器又会将每个消息回送给客户端。虽然它本身看起来好像用处不大，但它充分体现了客户端/服务器系统中典型的请求-<strong>响应交互模式</strong>。</p>
 <p><strong>下面来编写Echo服务器：</strong>   </p>
 <p>​        所有的Netty服务器都需要以下两部分。至少一个ChannelHandler——该组件实现了服务器对从客户端接收的数据的处理，即它的业务逻辑。引导——这是配置服务器的启动代码。至少，它会将服务器绑定到它要监听连接请求的端口上。</p>
@@ -356,8 +356,8 @@
 <li>在一切设置完成后，调用Bootstrap.connect()方法连接到远程节点。</li>
 </ul>
 <p><strong>3.3 运行服务端和客户端</strong></p>
-<p><img src="Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8/2-2.png" alt=""></p>
-<p><img src="Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8/2-3.png" alt=""></p>
+<p><img src="2-2.png" alt=""></p>
+<p><img src="2-3.png" alt=""></p>
 <blockquote>
 <p>一旦客户端建立连接，它就发送它的消息 —— Netty rocks!</p>
 <p>服务器报告接收到的消息   ，并将其返回给客户端</p>
