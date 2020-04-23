@@ -45,17 +45,20 @@
   };
 </script>
 
-  <meta name="description" content="我能吞下玻璃而不伤身体">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;categories&#x2F;index.html">
+  <meta name="description" content="1 Channel、EvenetLoop和ChannelFutureChannel、EvenetLoop和ChannelFuture这些类合在一起可以被认为是Netty网络抽象的代表：  Channel——Socket  EventLoop——控制流、多线程处理、并发  ChannelFuture——异步通知">
+<meta name="keywords" content="Netty">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Netty学习-3_Netty组件">
+<meta property="og:url" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-3-Netty%E7%BB%84%E4%BB%B6&#x2F;index.html">
 <meta property="og:site_name" content="Y&#39;s Blog">
-<meta property="og:description" content="我能吞下玻璃而不伤身体">
+<meta property="og:description" content="1 Channel、EvenetLoop和ChannelFutureChannel、EvenetLoop和ChannelFuture这些类合在一起可以被认为是Netty网络抽象的代表：  Channel——Socket  EventLoop——控制流、多线程处理、并发  ChannelFuture——异步通知">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-03T02:28:20.909Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-3-Netty%E7%BB%84%E4%BB%B6&#x2F;3-1.png">
+<meta property="og:updated_time" content="2020-04-22T09:26:23.834Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;blog.chenliyang.net&#x2F;Netty%E5%AD%A6%E4%B9%A0-3-Netty%E7%BB%84%E4%BB%B6&#x2F;3-1.png">
 
-<link rel="canonical" href="http://blog.chenliyang.net/categories/">
+<link rel="canonical" href="http://blog.chenliyang.net/Netty%E5%AD%A6%E4%B9%A0-3-Netty%E7%BB%84%E4%BB%B6/">
 
 
 <script id="page-configurations">
@@ -63,14 +66,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
-    isPage: true,
+    isPost: true,
+    isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类 | Y's Blog
-  </title>
+  <title>Netty学习-3_Netty组件 | Y's Blog</title>
   
 
 
@@ -205,52 +207,126 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-Hans">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://blog.chenliyang.net/Netty%E5%AD%A6%E4%B9%A0-3-Netty%E7%BB%84%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/title.jpg">
+      <meta itemprop="name" content="Y.">
+      <meta itemprop="description" content="我能吞下玻璃而不伤身体">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Y's Blog">
+    </span>
       <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Netty学习-3_Netty组件
+        </h2>
 
-<h2 class="post-title" itemprop="name headline">分类
-</h2>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<div class="post-meta">
+              <time title="创建时间：2020-04-17 11:51:07" itemprop="dateCreated datePublished" datetime="2020-04-17T11:51:07+08:00">2020-04-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Netty/" itemprop="url" rel="index">
+                    <span itemprop="name">Netty</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="1-Channel、EvenetLoop和ChannelFuture"><a href="#1-Channel、EvenetLoop和ChannelFuture" class="headerlink" title="1 Channel、EvenetLoop和ChannelFuture"></a>1 Channel、EvenetLoop和ChannelFuture</h3><p>Channel、EvenetLoop和ChannelFuture这些类合在一起可以被认为是Netty网络抽象的代表：</p>
+<ul>
+<li><p>Channel——Socket</p>
+</li>
+<li><p>EventLoop——控制流、多线程处理、并发</p>
+</li>
+<li><p>ChannelFuture——异步通知</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<h4 id="1-1-Channel接口"><a href="#1-1-Channel接口" class="headerlink" title="1.1 Channel接口"></a>1.1 Channel接口</h4><p>​        基本的I/O操作（bind()、connect()、read()和write()）依赖于底层网络传输所提供的原语。在基于Java的网络编程中，其基本的构造是class Socket。Netty的Channel接口所提供的API，大大地降低了直接使用Socket类的复杂性。此外,Channel也是拥有许多预定义的、专门化实现的广泛类层次结构的根，下面是一个简短的部分清单：</p>
+<ul>
+<li>EmbeddedChannel</li>
+<li>LocalServerChannel</li>
+<li>NioDatagramChannel</li>
+<li>NioSctpChannel</li>
+<li>NioSocketChannel</li>
+</ul>
+<h4 id="1-2-EventLoop-接口"><a href="#1-2-EventLoop-接口" class="headerlink" title="1.2 EventLoop 接口"></a>1.2 EventLoop 接口</h4><p>​        EventLoop定义了Netty的核心抽象，用于处理连接的生命周期中所发生的时间。下图说明了Channel、EventLoop、Thread以及EventLoopGroup之间的关系。</p>
+<p><img src="3-1.png" alt=""></p>
+<p>​        这些关系是：</p>
+<ul>
+<li>一个EventLoopGroup包含一个或者多个EventLoop</li>
+<li>一个EventLoop在他的生命周期内只和一个Thread绑定</li>
+<li>所有由EventLoop处理的I/O事件都将在它专有的Thread上被处理</li>
+<li>一个Channel在它的生命周期内只注册于一个或多个EventLoop</li>
+<li>一个EvenetLoop可能会被分配给一个或多个Channel</li>
+</ul>
+<h4 id="1-3-ChannelFuture接口"><a href="#1-3-ChannelFuture接口" class="headerlink" title="1.3 ChannelFuture接口"></a>1.3 ChannelFuture接口</h4><p>​        Netty提供了ChannelFuture接口，其addListener()方法注册了一个ChannelFutureListener，以便在某个操作完成时（无论成功与否）得到通知。</p>
+<h3 id="2-ChannelHandler和ChannelPipeline"><a href="#2-ChannelHandler和ChannelPipeline" class="headerlink" title="2 ChannelHandler和ChannelPipeline"></a>2 ChannelHandler和ChannelPipeline</h3><h4 id="2-1-ChannelHandler接口"><a href="#2-1-ChannelHandler接口" class="headerlink" title="2.1 ChannelHandler接口"></a>2.1 ChannelHandler接口</h4><p>​        从开发人员角度来看，Netty的主要组件是ChannelHandler，它充当了所有处理入站和出站数据的应用程序逻辑的容器。ChannelHandler的方法是由网络事件触发的。事实上，ChannelHandler可专门用于几乎任何类型的动作，例如将数据从一种格式转换为另外一种格式，或者处理转换过程中所抛出的异常。</p>
+<h4 id="2-2-ChannelPipeline"><a href="#2-2-ChannelPipeline" class="headerlink" title="2.2 ChannelPipeline"></a>2.2 ChannelPipeline</h4><p>​        </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Netty/" rel="tag"><i class="fa fa-tag"></i> Netty</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Netty%E5%AD%A6%E4%B9%A0-2_%E7%AC%AC%E4%B8%80%E6%AC%BENetty%E5%BA%94%E7%94%A8/" rel="prev" title="Netty学习-2_第一款Netty应用">
+      <i class="fa fa-chevron-left"></i> Netty学习-2_第一款Netty应用
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 5 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Netty/">Netty</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">java基础知识</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E5%BD%B1/">电影</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
   </div>
 
 
@@ -280,6 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Channel、EvenetLoop和ChannelFuture"><span class="nav-number">1.</span> <span class="nav-text">1 Channel、EvenetLoop和ChannelFuture</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Channel接口"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Channel接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-EventLoop-接口"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 EventLoop 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-ChannelFuture接口"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 ChannelFuture接口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ChannelHandler和ChannelPipeline"><span class="nav-number">2.</span> <span class="nav-text">2 ChannelHandler和ChannelPipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-ChannelHandler接口"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 ChannelHandler接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-ChannelPipeline"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 ChannelPipeline</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
